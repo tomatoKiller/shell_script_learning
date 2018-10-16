@@ -1,0 +1,521 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>IO重定向与管道 · shell脚本简介</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wurunpeng <wurunpeng@4paradigm.com>">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="shell中的循环语句.html" />
+    
+    
+    <link rel="prev" href="shell的综述.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="shell的综述.html">
+            
+                <a href="shell的综述.html">
+            
+                    
+                    shell的综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="IO重定向与管道.html">
+            
+                <a href="IO重定向与管道.html">
+            
+                    
+                    IO重定向与管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="shell中的循环语句.html">
+            
+                <a href="shell中的循环语句.html">
+            
+                    
+                    shell中的循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="变量定义和使用.html">
+            
+                <a href="变量定义和使用.html">
+            
+                    
+                    变量定义和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="条件分支语句.html">
+            
+                <a href="条件分支语句.html">
+            
+                    
+                    条件分支语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="函数说明.html">
+            
+                <a href="函数说明.html">
+            
+                    
+                    函数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="shell函数说明.md">
+            
+                <span>
+            
+                    
+                    shell函数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="正则表达式.html">
+            
+                <a href="正则表达式.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="shell之进程管理.html">
+            
+                <a href="shell之进程管理.html">
+            
+                    
+                    shell之进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="shell中的数学运算.html">
+            
+                <a href="shell中的数学运算.html">
+            
+                    
+                    shell中的数学运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="shell中的符号扩展.html">
+            
+                <a href="shell中的符号扩展.html">
+            
+                    
+                    shell中的符号扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="shell常用命令.html">
+            
+                <a href="shell常用命令.html">
+            
+                    
+                    shell常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="shell中的一些trick.html">
+            
+                <a href="shell中的一些trick.html">
+            
+                    
+                    shell中的一些trick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="shell中执行命令的几种形式.html">
+            
+                <a href="shell中执行命令的几种形式.html">
+            
+                    
+                    shell中执行命令的几种形式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >IO重定向与管道</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="io&#x91CD;&#x5B9A;&#x5411;&#x4E0E;&#x7BA1;&#x9053;">IO&#x91CD;&#x5B9A;&#x5411;&#x4E0E;&#x7BA1;&#x9053;</h1>
+<p>&#x5728;linux&#x4E2D;&#xFF0C;&#x4E00;&#x5207;&#x4E1C;&#x897F;&#x90FD;&#x662F;&#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x4E0E;&#x4E4B;&#x5BF9;&#x5E94;&#xFF0C;&#x8FD9;&#x91CC;&#x5728;&#x4ECB;&#x7ECD;IO&#x91CD;&#x5B9A;&#x5411;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x4ECB;&#x7ECD;&#x4E09;&#x4E2A;&#x7279;&#x6B8A;&#x7684;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;&#x3002;</p>
+<pre><code class="lang-shell">0 ---&gt; stdin    # &#x6807;&#x51C6;&#x8F93;&#x5165;
+1 ---&gt; stdout   # &#x6807;&#x51C6;&#x8F93;&#x51FA;
+2 ---&gt; stderr   # &#x6807;&#x51C6;&#x9519;&#x8BEF;
+</code></pre>
+<h2 id="&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;">&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;</h2>
+<p>&#x4F7F;&#x7528; &gt; &#x6765;&#x91CD;&#x5B9A;&#x5411;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;truncate&#x6A21;&#x5F0F;&#xFF0C;&#x6BCF;&#x6B21;&#x5199;&#x5165;&#x524D;&#x4F1A;&#x6E05;&#x7A7A;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-shell">echo &quot;some content1&quot; &gt; file1.txt
+cat file1.txt
+echo &quot;some content2&quot; &gt; file1.txt
+cat file1.txt
+</code></pre>
+<p>&#x4F7F;&#x7528; &gt;&gt; &#x6765;&#x91CD;&#x5B9A;&#x5411;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;append&#x6A21;&#x5F0F;&#xFF0C;&#x6BCF;&#x6B21;&#x5199;&#x5165;&#x90FD;&#x4F1A;&#x8FFD;&#x52A0;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;</p>
+<pre><code class="lang-shell">echo &quot;some content1&quot; &gt;&gt; file2.txt
+cat file2.txt
+echo &quot;some content2&quot; &gt;&gt; file2.txt
+cat file2.txt
+</code></pre>
+<h2 id="&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x91CD;&#x5B9A;&#x5411;">&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x91CD;&#x5B9A;&#x5411;</h2>
+<p>&#x4F7F;&#x7528; 2&gt; &#x6765;&#x91CD;&#x5B9A;&#x5411;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;truncate&#x6A21;&#x5F0F;&#xFF0C;&#x6BCF;&#x6B21;&#x5199;&#x5165;&#x524D;&#x4F1A;&#x6E05;&#x7A7A;&#x6587;&#x4EF6;</p>
+<pre><code class="lang-shell">ls -eee 2&gt; error1.txt
+cat error1.txt
+ls -eee 2&gt; error1.txt
+cat error1.txt
+</code></pre>
+<p>&#x4F7F;&#x7528; 2&gt;&gt; &#x6765;&#x91CD;&#x5B9A;&#x5411;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;append&#x6A21;&#x5F0F;&#xFF0C;&#x6BCF;&#x6B21;&#x5199;&#x5165;&#x90FD;&#x4F1A;&#x8FFD;&#x52A0;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x5185;&#x5BB9;</p>
+<pre><code class="lang-shell">ls -eee 2&gt;&gt; error2.txt
+cat error2.txt
+ls -eee 2&gt;&gt; error2.txt
+cat error2.txt
+</code></pre>
+<p>&#x4F7F;&#x7528; 2&gt;&amp;1 &#x628A;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x51FA;</p>
+<pre><code class="lang-shell">ls -eee &gt;/dev/null 2&gt;&amp;1  # &#x628A;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;/dev/null
+ls -eee &amp;&gt; /dev/null     # &#x7B49;&#x4EF7;&#x4E8E;&#x4E0A;&#x9762;&#x7684;&#x5199;&#x6CD5;
+</code></pre>
+<h2 id="&#x91CD;&#x5B9A;&#x5411;&#x7684;&#x987A;&#x5E8F;&#x95EE;&#x9898;">&#x91CD;&#x5B9A;&#x5411;&#x7684;&#x987A;&#x5E8F;&#x95EE;&#x9898;</h2>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4E24;&#x79CD;&#x5199;&#x6CD5;&#x987A;&#x5E8F;&#x4E0D;&#x540C;&#xFF0C;&#x542B;&#x4E49;&#x4E5F;&#x5927;&#x76F8;&#x5F84;&#x5EAD;&#x3002;</p>
+<pre><code class="lang-shell">ls -eee &gt;/dev/null 2&gt;&amp;1 # &#x5199;&#x6CD5;&#x4E00;
+ls -eee 2&gt;&amp;1 &gt;/dev/null # &#x5199;&#x6CD5;&#x4E8C;
+</code></pre>
+<p>&#x5199;&#x6CD5;&#x4E00;&#x5148;&#x5C06;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;/dev/null&#x9ED1;&#x6D1E;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6807;&#x51C6;&#x8F93;&#x51FA;(&#x5DF2;&#x7ECF;&#x6307;&#x5411;/dev/null&#x6587;&#x4EF6;)&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x548C;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x90FD;&#x6307;&#x5411;/dev/null&#x3002;
+&#x5199;&#x6CD5;&#x4E8C;&#x5148;&#x5C06;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x6307;&#x5411;&#x6807;&#x51C6;&#x8F93;&#x51FA;(&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x590D;&#x5236;&#x4E86;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;1)&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x91CD;&#x5B9A;&#x5411;&#x5230;/dev/null&#xFF0C;&#x7ED3;&#x679C;&#x5C31;&#x662F;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x6307;&#x5411;&#x6587;&#x4EF6;&#x63CF;&#x8FF0;&#x7B26;1&#xFF0C;&#x800C;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6307;&#x5411;/dev/null</p>
+<h2 id="&#x6807;&#x51C6;&#x8F93;&#x5165;&#x91CD;&#x5B9A;&#x5411;">&#x6807;&#x51C6;&#x8F93;&#x5165;&#x91CD;&#x5B9A;&#x5411;</h2>
+<p>&#x4F7F;&#x7528; &lt; &#x6765;&#x91CD;&#x5B9A;&#x5411;&#x6807;&#x51C6;&#x8F93;&#x5165;</p>
+<pre><code class="lang-shell">cat &lt; error2.txt &gt; error3.txt   #&#x628A;cat&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#x91CD;&#x5B9A;&#x5411;&#x5230;error2.txt&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x6253;&#x5370;&#x5230;error3.txt&#x4E2D;
+</code></pre>
+<h2 id="&#x7BA1;&#x9053;&#x7B26;&#x53F7;">&#x7BA1;&#x9053;&#x7B26;&#x53F7;</h2>
+<p>&#x7BA1;&#x9053;&#x7B26;&#x53F7;&#x5F88;&#x5F3A;&#x5927;&#x3002;linux&#x6709;&#x5F88;&#x591A;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x4F46;&#x662F;&#x6BCF;&#x4E2A;&#x547D;&#x4EE4;&#x90FD;&#x53EA;&#x80FD;&#x5B8C;&#x6210;&#x7279;&#x5B9A;&#x7684;&#x4E00;&#x7C7B;&#x529F;&#x80FD;&#x3002;&#x56E0;&#x6B64;&#x5F80;&#x5F80;&#x9700;&#x8981;&#x628A;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x7EC4;&#x5408;&#x8D77;&#x6765;&#x4F7F;&#x7528;&#x6765;&#x8FBE;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x7684;&#x3002;
+&#x4F7F;&#x7528;&#x7BA1;&#x9053;&#x7B26;&#x53F7; | &#x53EF;&#x4EE5;&#x4E32;&#x8054;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x3002;&#x5373;&#x628A;&#x524D;&#x9762;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;&#x540E;&#x9762;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x5165;&#x3002;</p>
+<pre><code class="lang-shell">cat error2.txt | head -n 3  # cat&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x4F20;&#x5165;head&#x547D;&#x4EE4;&#xFF0C;head&#x547D;&#x4EE4;&#x622A;&#x53D6;&#x5176;&#x524D;&#x4E09;&#x884C;
+</code></pre>
+<p>&#x5728;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;cat&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x901A;&#x8FC7;&#x7BA1;&#x9053;&#x7B26;&#x53F7;&#x4F20;&#x9012;&#x5230;&#x4E86;head&#x547D;&#x4EE4;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x5165;&#xFF0C;&#x800C;head&#x547D;&#x4EE4;&#x4F1A;&#x4ECE;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8BFB;&#x53D6;&#x5185;&#x5BB9;&#xFF0C;&#x56E0;&#x6B64;&#x5B8C;&#x6210;&#x4E86;&#x547D;&#x4EE4;&#x7684;&#x4E32;&#x8054;&#x3002;
+&#x4F46;&#x662F;&#xFF0C;&#x9488;&#x5BF9;&#x4E00;&#x4E9B;&#x4E0D;&#x76F4;&#x63A5;&#x8BFB;&#x53D6;&#x6807;&#x51C6;&#x8F93;&#x5165;&#xFF0C;&#x800C;&#x662F;&#x9700;&#x8981;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x6765;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#x4F55;&#x901A;&#x8FC7;&#x7BA1;&#x9053;&#x6765;&#x4E32;&#x8054;&#x6267;&#x884C;&#x5462;&#xFF1F; &#x7B54;&#x6848;&#x662F;&#x4F7F;&#x7528;xargs&#x547D;&#x4EE4;&#x3002;xargs&#x547D;&#x4EE4;&#x662F;&#x7ED9;&#x5176;&#x4ED6;&#x547D;&#x4EE4;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x4E00;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x5B83;&#x4F1A;&#x628A;&#x524D;&#x9762;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x4F5C;&#x4E3A;&#x540E;&#x9762;&#x547D;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<pre><code class="lang-shell">ls | xargs -i echo {}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;ls&#x7684;&#x8F93;&#x51FA;&#x901A;&#x8FC7;&#x7BA1;&#x9053;&#x4F20;&#x9012;&#x5230;&#x540E;&#x9762;&#xFF0C;xargs&#x547D;&#x4EE4;&#x628A;&#x4F20;&#x9012;&#x8FC7;&#x6765;&#x7684;ls&#x7684;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7ED9;echo&#x547D;&#x4EE4;&#x3002;{}&#x662F;&#x53C2;&#x6570;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x4EE3;&#x8868;ls&#x7ED3;&#x679C;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x884C;&#x3002;
+&#x4F7F;&#x7528;-i&#x9009;&#x9879;&#x65F6;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x91C7;&#x7528;{}&#x4F5C;&#x4E3A;&#x5360;&#x4F4D;&#x7B26;&#x3002;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;xargs&#x547D;&#x4EE4;&#x7684;-I&#x9009;&#x9879;&#x6765;&#x663E;&#x5F0F;&#x6307;&#x5B9A;&#x53C2;&#x6570;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x7528;[]&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x5360;&#x4F4D;&#x7B26;</p>
+<pre><code class="lang-shell">ls | xargs -I [] echo []
+</code></pre>
+<p>&#x9664;&#x4E86; | &#x7B26;&#x53F7;&#x5916;&#xFF0C;&amp;|&#x7B26;&#x53F7;&#x4E5F;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7BA1;&#x9053;&#x7B26;&#x53F7;&#xFF0C;&#x5176;&#x4F1A;&#x5C06;&#x524D;&#x9762;&#x547D;&#x4EE4;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x90FD;&#x4F5C;&#x4E3A;&#x540E;&#x9762;&#x547D;&#x4EE4;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F; 2&gt;&amp;1 | &#x7684;&#x7B80;&#x5199;&#x3002;&#x4E0B;&#x9762;&#x4E24;&#x79CD;&#x5199;&#x6CD5;&#x7B49;&#x4EF7;&#x3002;</p>
+<pre><code class="lang-shell">ls -eee |&amp; xargs -i echo {} &gt; ttt.txt
+ls -eee 2&gt;&amp;1 | xargs -i echo {} &gt; ttt.txt
+</code></pre>
+<p>&#x7BA1;&#x9053;&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;&#x547D;&#x4EE4;&#x90FD;&#x662F;&#x5728;&#x65B0;&#x7684;&#x5B50;shell&#x4E2D;&#x6267;&#x884C;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x5F53;&#x524D;shell&#x7684;&#x53D8;&#x91CF;&#x4E0D;&#x4EA7;&#x751F;&#x5F71;&#x54CD;&#x3002;</p>
+<pre><code class="lang-shell">a=4
+a=5 | echo $a       # 4
+</code></pre>
+<p>&#x7BA1;&#x9053;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x9ED8;&#x8BA4;&#x662F;&#x7BA1;&#x9053;&#x4E2D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x7136;&#x800C;&#x5982;&#x679C;&#x73AF;&#x5883;&#x53D8;&#x91CF;pipefail&#x88AB;&#x8BBE;&#x7F6E;&#x4E86;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;&#x7BA1;&#x9053;&#x4E2D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x6267;&#x884C;&#x5931;&#x8D25;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x90FD;&#x6267;&#x884C;&#x6210;&#x529F;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;0&#x3002;</p>
+<pre><code class="lang-shell">ls | ls -eee | ls
+echo $?         # 0
+
+set -o pipefail
+ls | ls -eee | ls
+echo $?         # 2
+</code></pre>
+<p>&#x5728;&#x7BA1;&#x9053;&#x547D;&#x4EE4;&#x524D;&#x9762;&#x4F7F;&#x7528;&#xFF01;&#x7B26;&#x53F7;&#x65F6;&#xFF0C;&#x662F;&#x5BF9;&#x6574;&#x4E2A;&#x7BA1;&#x9053;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x53D6;&#x53CD;&#xFF0C;&#x7BA1;&#x9053;&#x8FD4;&#x56DE;&#x503C;&#x89C4;&#x5219;&#x5982;&#x4E0A;&#x6240;&#x8FF0;&#x3002;</p>
+<h2 id="&#x547D;&#x4EE4;&#x7684;&#x7EC4;&#x5408;">&#x547D;&#x4EE4;&#x7684;&#x7EC4;&#x5408;</h2>
+<p>&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x7684;&#x7BA1;&#x9053;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;&#x6765;&#x5C06;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x7EC4;&#x5408;&#x8D77;&#x6765;&#x6267;&#x884C;&#x3002;</p>
+<p>&amp;&amp;&#x7B26;&#x53F7;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#x7684;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x5728;&#x6267;&#x884C;&#x65F6;&#x4F1A;&#x53D1;&#x751F;&#x903B;&#x8F91;&#x77ED;&#x8DEF;&#x60C5;&#x51B5;&#xFF0C;&#x53EA;&#x6709;&#x524D;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x6210;&#x529F;(&#x9000;&#x51FA;&#x72B6;&#x6001;&#x4E3A;0)&#x65F6;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x540E;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<pre><code class="lang-shell">ls -eee &amp;&gt; /dev/null &amp;&amp; echo &quot;success&quot;      # &#x65E0;&#x8F93;&#x51FA;
+ls -al &amp;&gt; /dev/null &amp;&amp; echo &quot;success&quot;       # &#x8F93;&#x51FA;success
+</code></pre>
+<p>||&#x7B26;&#x53F7;&#x521A;&#x597D;&#x548C;&amp;&amp;&#x76F8;&#x53CD;&#xFF0C;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#x7684;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x5728;&#x6267;&#x884C;&#x65F6;&#xFF0C;&#x53EA;&#x6709;&#x5F53;&#x524D;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x5931;&#x8D25;&#x65F6;&#x624D;&#x4F1A;&#x6267;&#x884C;&#x540E;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<pre><code class="lang-shell">ls -eee &amp;&gt; /dev/null || echo &quot;failed&quot;      # &#x8F93;&#x51FA;failed
+ls -al &amp;&gt; /dev/null || echo &quot;failed&quot;       # &#x65E0;&#x8F93;&#x51FA;
+</code></pre>
+<p>&amp;&amp; &#x548C; || &#x4E32;&#x8D77;&#x6765;&#x7684;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x7EC4;&#x5408; &#x5176;&#x6574;&#x4F53;&#x7684;&#x8FD4;&#x56DE;&#x503C; &#x53D6;&#x7684;&#x662F;&#x6700;&#x540E;&#x4E00;&#x6761;&#x88AB;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;2&#x4E2A;&#x547D;&#x4EE4;&#x7EC4;&#x5408;&#x65B9;&#x5F0F;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x547D;&#x4EE4;&#x7EC4;&#x5408;&#x65B9;&#x5F0F;&#xFF0C;&#x5982;;&#x548C;&amp;&#xFF0C;&#x4ED6;&#x4EEC;&#x7684;&#x4ECB;&#x7ECD;&#x653E;&#x5728;<strong>shell&#x4E4B;&#x8FDB;&#x7A0B;&#x7BA1;&#x7406;</strong>&#x8FD9;&#x4E00;&#x7AE0;&#x4E2D;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="shell的综述.html" class="navigation navigation-prev " aria-label="Previous page: shell的综述">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="shell中的循环语句.html" class="navigation navigation-next " aria-label="Next page: shell中的循环语句">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"IO重定向与管道","level":"1.3","depth":1,"next":{"title":"shell中的循环语句","level":"1.4","depth":1,"path":"shell中的循环语句.md","ref":"shell中的循环语句.md","articles":[]},"previous":{"title":"shell的综述","level":"1.2","depth":1,"path":"shell的综述.md","ref":"shell的综述.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","github","-highlight","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"shell_script_learn"},"github":{"url":"https://github.com/tomatoKiller/shell_script_learning"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wurunpeng <wurunpeng@4paradigm.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"shell脚本简介","language":"zh-hans","links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":"*","description":"shell教程"},"file":{"path":"IO重定向与管道.md","mtime":"2018-10-16T13:23:44.670Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-16T13:25:59.199Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

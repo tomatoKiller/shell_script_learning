@@ -1,0 +1,428 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Introduction · shell脚本简介</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wurunpeng <wurunpeng@4paradigm.com>">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="shell的综述.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="shell的综述.html">
+            
+                <a href="shell的综述.html">
+            
+                    
+                    shell的综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="IO重定向与管道.html">
+            
+                <a href="IO重定向与管道.html">
+            
+                    
+                    IO重定向与管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="shell中的循环语句.html">
+            
+                <a href="shell中的循环语句.html">
+            
+                    
+                    shell中的循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="变量定义和使用.html">
+            
+                <a href="变量定义和使用.html">
+            
+                    
+                    变量定义和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="条件分支语句.html">
+            
+                <a href="条件分支语句.html">
+            
+                    
+                    条件分支语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="函数说明.html">
+            
+                <a href="函数说明.html">
+            
+                    
+                    函数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="shell函数说明.md">
+            
+                <span>
+            
+                    
+                    shell函数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="正则表达式.html">
+            
+                <a href="正则表达式.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="shell之进程管理.html">
+            
+                <a href="shell之进程管理.html">
+            
+                    
+                    shell之进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="shell中的数学运算.html">
+            
+                <a href="shell中的数学运算.html">
+            
+                    
+                    shell中的数学运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="shell中的符号扩展.html">
+            
+                <a href="shell中的符号扩展.html">
+            
+                    
+                    shell中的符号扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="shell常用命令.html">
+            
+                <a href="shell常用命令.html">
+            
+                    
+                    shell常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="shell中的一些trick.html">
+            
+                <a href="shell中的一些trick.html">
+            
+                    
+                    shell中的一些trick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="shell中执行命令的几种形式.html">
+            
+                <a href="shell中执行命令的几种形式.html">
+            
+                    
+                    shell中执行命令的几种形式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h1>
+<p>shell&#x672C;&#x8EAB;&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x662F;&#x5B8F;&#x5904;&#x7406;&#x5668;&#x3002;&#x7528;&#x6765;&#x5BF9;&#x6587;&#x672C;&#x6216;&#x8005;&#x7B26;&#x53F7;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x6765;&#x5B9E;&#x73B0;&#x590D;&#x6742;&#x7684;&#x529F;&#x80FD;&#x3002;Unix shell&#x4E0D;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x89E3;&#x91CA;&#x5668;&#xFF0C;&#x540C;&#x65F6;&#x8FD8;&#x662F;&#x4E00;&#x79CD;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x62E5;&#x6709;&#x7740;&#x5F3A;&#x5927;&#x7684;&#x529F;&#x80FD;&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x547D;&#x4EE4;&#x89E3;&#x91CA;&#x5668;&#xFF0C;shell&#x4E2D;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x5404;&#x79CD;gnu&#x547D;&#x4EE4;&#xFF0C;&#x540C;&#x65F6;shell&#x5185;&#x90E8;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x5B9E;&#x7528;&#x7684;&#x547D;&#x4EE4;&#x3002;&#x800C;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;shell&#x5141;&#x8BB8;&#x628A;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#x96C6;&#x6574;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x5B9E;&#x73B0;&#x5F3A;&#x5927;&#x800C;&#x590D;&#x6742;&#x7684;&#x529F;&#x80FD;&#x3002;
+shell&#x6709;&#x591A;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;&#xFF0C;Unix/Linux&#x7CFB;&#x7EDF;&#x90FD;&#x652F;&#x6301;&#x591A;&#x79CD;&#x98CE;&#x683C;&#x7684;shell&#x3002; &#x6BD4;&#x8F83;&#x5E38;&#x89C1;&#x6709;Bourne Shell&#x3001;Bash&#x3001;C Shell&#x3001;Z Shell&#x3001;Korn Shell&#x3001;TC Shell&#x7B49;&#x7B49;&#x3002;&#x672C;&#x8BFE;&#x7A0B;&#x4E3B;&#x8981;&#x8BB2;&#x89E3;Bash&#xFF0C;&#x540E;&#x6587;&#x4E2D;&#x7684;shell&#x5982;&#x65E0;&#x7279;&#x522B;&#x8BF4;&#x660E;&#xFF0C;&#x5747;&#x6307;&#x7684;&#x662F;Bash&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="shell的综述.html" class="navigation navigation-next navigation-unique" aria-label="Next page: shell的综述">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"shell的综述","level":"1.2","depth":1,"path":"shell的综述.md","ref":"shell的综述.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","github","-highlight","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"shell_script_learn"},"github":{"url":"https://github.com/tomatoKiller/shell_script_learning"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wurunpeng <wurunpeng@4paradigm.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"shell脚本简介","language":"zh-hans","links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":"*","description":"shell教程"},"file":{"path":"README.md","mtime":"2018-09-28T01:48:38.781Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-16T13:25:59.199Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

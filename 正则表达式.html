@@ -1,0 +1,693 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>正则表达式 · shell脚本简介</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wurunpeng <wurunpeng@4paradigm.com>">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="shell之进程管理.html" />
+    
+    
+    <link rel="prev" href="shell函数说明.md" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="shell的综述.html">
+            
+                <a href="shell的综述.html">
+            
+                    
+                    shell的综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="IO重定向与管道.html">
+            
+                <a href="IO重定向与管道.html">
+            
+                    
+                    IO重定向与管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="shell中的循环语句.html">
+            
+                <a href="shell中的循环语句.html">
+            
+                    
+                    shell中的循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="变量定义和使用.html">
+            
+                <a href="变量定义和使用.html">
+            
+                    
+                    变量定义和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="条件分支语句.html">
+            
+                <a href="条件分支语句.html">
+            
+                    
+                    条件分支语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="函数说明.html">
+            
+                <a href="函数说明.html">
+            
+                    
+                    函数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="shell函数说明.md">
+            
+                <span>
+            
+                    
+                    shell函数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="正则表达式.html">
+            
+                <a href="正则表达式.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="shell之进程管理.html">
+            
+                <a href="shell之进程管理.html">
+            
+                    
+                    shell之进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="shell中的数学运算.html">
+            
+                <a href="shell中的数学运算.html">
+            
+                    
+                    shell中的数学运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="shell中的符号扩展.html">
+            
+                <a href="shell中的符号扩展.html">
+            
+                    
+                    shell中的符号扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="shell常用命令.html">
+            
+                <a href="shell常用命令.html">
+            
+                    
+                    shell常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="shell中的一些trick.html">
+            
+                <a href="shell中的一些trick.html">
+            
+                    
+                    shell中的一些trick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="shell中执行命令的几种形式.html">
+            
+                <a href="shell中执行命令的几种形式.html">
+            
+                    
+                    shell中执行命令的几种形式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >正则表达式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;">&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</h1>
+<p>&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x4E8E;&#x5177;&#x4F53;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x7684;&#x6982;&#x5FF5;&#x3002;&#x5B83;&#x7684;&#x7528;&#x9014;&#x662F;&#x4E3A;&#x4E86;&#x67E5;&#x627E;&#x7B26;&#x5408;&#x67D0;&#x79CD;&#x6A21;&#x5F0F;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x3002;
+&#x6BD4;&#x5982;&#x4E0B;&#x9762;&#x4F2A;&#x4EE3;&#x7801;&#x6240;&#x793A;&#x7684;&#xFF0C;&#x67E5;&#x627E;</p>
+<pre><code class="lang-shell">&quot;abcdefj&quot; =~ a*             # a*&#x8868;&#x793A;&#x4EE5;&#x5B57;&#x6BCD;a&#x5F00;&#x5934;&#x7684;&#x6240;&#x6709;&#x5B57;&#x7B26;&#x4E32;
+&quot;/aaa/bbb/ccc.tt&quot; =~ *tt    # *tt&#x67E5;&#x627E;&#x4EE5;&#x5B57;&#x7B26;&#x4E32;tt&#x7ED3;&#x5C3E;&#x7684;
+</code></pre>
+<p>&#x5728;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#xFF0C;&#x7B26;&#x53F7;&#x6216;&#x8005;&#x5B57;&#x7B26;&#x53EF;&#x4EE5;&#x5206;&#x6210;&#x4E24;&#x7C7B;&#xFF0C;&#x4E00;&#x7C7B;&#x662F;&#x57FA;&#x672C;&#x5B57;&#x7B26;&#xFF0C;&#x65E0;&#x7279;&#x6B8A;&#x542B;&#x4E49;&#xFF0C;&#x53E6;&#x4E00;&#x7C7B;&#x662F;meta&#x5B57;&#x7B26;&#xFF0C;meta&#x5B57;&#x7B26;&#x5219;&#x88AB;&#x8D4B;&#x4E88;&#x4E86;&#x7279;&#x6B8A;&#x7684;&#x542B;&#x4E49;&#x3002;</p>
+<p>POSIX &#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x79CD;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BED;&#x6CD5;</p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>BRE</td>
+<td>&#x57FA;&#x672C;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</td>
+</tr>
+<tr>
+<td>ERE</td>
+<td>&#x6269;&#x5C55;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4E24;&#x79CD;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5728;&#x8BED;&#x6CD5;&#x53CA;&#x529F;&#x80FD;&#x4E0A;&#x9762;&#x6709;&#x76F8;&#x540C;&#x70B9;&#xFF0C;&#x4E5F;&#x6709;&#x4E0D;&#x540C;&#x70B9;&#x3002;&#x5728;linux&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x7684;&#x547D;&#x4EE4;&#x5DE5;&#x5177;&#x90FD;&#x9700;&#x8981;&#x7528;&#x5230;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x4EE4;&#x6216;&#x5DE5;&#x5177;&#xFF0C;&#x652F;&#x6301;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BED;&#x6CD5;&#x6709;&#x6240;&#x4E0D;&#x540C;&#x3002;</p>
+<h2 id="bre&#x548C;ere&#x7684;&#x5DEE;&#x522B;&#x6BD4;&#x8F83;">BRE&#x548C;ERE&#x7684;&#x5DEE;&#x522B;&#x6BD4;&#x8F83;</h2>
+<p>&#x4E0B;&#x9762;&#x770B;&#x770B;POSIX&#x4E2D;&#x7684;meta&#x5B57;&#x7B26;&#x5B9A;&#x4E49;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x7B26;</th>
+<th>&#x652F;&#x6301;&#x60C5;&#x51B5;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>^</td>
+<td>BRE/ERE</td>
+<td>&#x5339;&#x914D;&#x5B57;&#x7B26;&#x7684;&#x5F00;&#x5934;&#x3002;<br>BRE:  &#x53EA;&#x6709;&#x653E;&#x5728;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x5F00;&#x5934;&#x624D;&#x4F5C;&#x4E3A;meta&#x5B57;&#x7B26;&#x3002;&#x5982;^ab&#x5339;&#x914D;&#x6240;&#x4EE5;&#x4EE5;ab&#x5F00;&#x5934;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x800C;a\^b&#x5219;&#x8868;&#x793A;&#x53EA;&#x5339;&#x914D;&#x5B57;&#x7B26;a\^b&#x3002; <br>ERE:  ^&#x5728;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4EFB;&#x610F;&#x4F4D;&#x7F6E;&#x5747;&#x4F5C;&#x4E3A;meta&#x5B57;&#x7B26;&#xFF0C;&#x53EA;&#x662F;&#x5F53;\^&#x4F4D;&#x4E8E;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x95F4;&#x65F6;&#xFF0C;&#x5982;a\^b&#x65E0;&#x6CD5;&#x5339;&#x914D;&#x5230;&#x4EFB;&#x4F55;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td>$</td>
+<td>BRE/ERE</td>
+<td>&#x5339;&#x914D;&#x5B57;&#x7B26;&#x7684;&#x7ED3;&#x5C3E;&#x3002;BRE&#x548C;ERE&#x4E2D;&#x7684;&#x542B;&#x4E49;&#x7C7B;&#x4F3C;&#x4E8E;^</td>
+</tr>
+<tr>
+<td>.</td>
+<td>BRE/ERE</td>
+<td>&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x975E;&#x6362;&#x884C;&#x7B26;&#x7684;&#x4EFB;&#x610F;&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td>*</td>
+<td>BRE/ERE</td>
+<td>&#x5339;&#x914D;0&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td>[...]</td>
+<td>BRE/ERE</td>
+<td>&#x5339;&#x914D;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x3002;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x8FDE;&#x5B57;&#x7B26;-&#x6765;&#x8868;&#x793A;&#x533A;&#x95F4;&#x3002;&#x5982;[0-9]&#x8868;&#x793A;0-9&#x8FD9;9&#x4E2A;&#x6570;&#x5B57;&#x3002;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;^&#x6765;&#x8868;&#x793A;&#x53CD;&#x4E49;&#xFF0C;&#x5982;[\^abc]&#x8868;&#x793A;&#x9664;&#x4E86;abc&#x4EE5;&#x5916;&#x7684;&#x5B57;&#x7B26;&#x3002;</td>
+</tr>
+<tr>
+<td>\</td>
+<td>BRE/ERE</td>
+<td>&#x8868;&#x793A;&#x6253;&#x5F00;&#x6216;&#x5173;&#x95ED;&#x540E;&#x9762;&#x7684;&#x5B57;&#x7B26;&#x7684;&#x7279;&#x6B8A;&#x542B;&#x4E49;</td>
+</tr>
+<tr>
+<td>\( \)</td>
+<td>BRE</td>
+<td>&#x8868;&#x793A;&#x53D6;&#x51FA;\(&#x548C;\)&#x4E4B;&#x95F4;&#x7684;&#x90E8;&#x5206;&#x5E76;&#x5B58;&#x50A8;&#x8D77;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x53EF;&#x4EE5;&#x5728;&#x540E;&#x7EED;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x901A;&#x8FC7;&#x7279;&#x5B9A;&#x7684;&#x8BED;&#x6CD5;&#x6765;&#x5F15;&#x7528;&#x3002;&#x6BD4;&#x5982;\(aa\).<em>\1&#xFF0C;&#x8FD9;&#x91CC;&#x7684;\1&#x5C31;&#x662F;&#x6307;&#x4EE3;\(&#x548C;\)&#x4E2D;&#x7684;aa&#xFF0C;&#x8FD9;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5B9E;&#x8D28;&#x4E0A;&#x662F;&#x7B49;&#x4EF7;&#x4E8E;aa.</em>aa</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>ERE</td>
+<td>&#x542B;&#x4E49;&#x540C;&#x4E0A;&#xFF0C;&#x53EA;&#x662F;&#x4E0D;&#x9700;&#x8981;\&#x8F6C;&#x4E49;</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>BRE/ERE</td>
+<td>&#x5982;&#x4E0A;&#x6240;&#x8FF0;&#xFF0C;&#x901A;&#x8FC7;\n&#x6765;&#x5F15;&#x7528;&#x524D;&#x9762;&#x5339;&#x914D;&#x5230;&#x7684;&#x7B2C;n&#x4E2A;&#x6A21;&#x5F0F;&#x3002;&#x5982;\(aa\).<em>\(bb\).</em>\2&#x5B9E;&#x8D28;&#x4E0A;&#x5C31;&#x662F;aa.<em>bb.</em>bb</td>
+</tr>
+<tr>
+<td>x\{m,n\}</td>
+<td>BRE</td>
+<td>x&#x5B57;&#x7B26;&#x51FA;&#x73B0;&#x6B21;&#x6570; &#x2265;m &#x5E76;&#x4E14; &#x2264;n</td>
+</tr>
+<tr>
+<td>x{m,n}</td>
+<td>ERE</td>
+<td>&#x542B;&#x4E49;&#x540C;&#x4E0A;&#xFF0C;&#x53EA;&#x662F;&#x4E0D;&#x9700;&#x8981;\&#x8F6C;&#x4E49;</td>
+</tr>
+<tr>
+<td>+</td>
+<td>ERE</td>
+<td>&#x524D;&#x9762;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x51FA;&#x73B0;&#x6B21;&#x6570;&#x2265;1</td>
+</tr>
+<tr>
+<td>\+</td>
+<td>BRE</td>
+<td>&#x542B;&#x4E49;&#x540C;&#x4E0A;&#xFF0C;&#x53EA;&#x662F;&#x9700;&#x8981;\&#x8F6C;&#x4E49;</td>
+</tr>
+<tr>
+<td>?</td>
+<td>ERE</td>
+<td>&#x524D;&#x9762;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x51FA;&#x73B0;0&#x6B21;&#x6216;1&#x6B21;</td>
+</tr>
+<tr>
+<td>\?</td>
+<td>BRE</td>
+<td>&#x542B;&#x4E49;&#x540C;&#x4E0A;&#xFF0C;&#x53EA;&#x662F;&#x9700;&#x8981;\&#x8F6C;&#x4E49;</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>ERE</td>
+<td>&#x5339;&#x914D;\</td>
+<td>&#x7B26;&#x53F7;&#x524D;&#x9762;&#x6216;&#x8005;&#x540E;&#x9762;&#x7684;&#x8868;&#x8FBE;&#x5F0F;</td>
+</tr>
+<tr>
+<td>\\</td>
+<td></td>
+<td>BRE</td>
+<td>&#x542B;&#x4E49;&#x540C;&#x4E0A;&#xFF0C;&#x53EA;&#x662F;&#x9700;&#x8981;\&#x8F6C;&#x4E49;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;ERE&#x548C;BRE&#x652F;&#x6301;&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;meta&#x5B57;&#x7B26;&#x4E0A;&#x9762;&#xFF0C;
+BRE&#x5982;&#x679C;&#x4E0D;&#x4F7F;&#x7528;\&#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x5F53;&#x505A;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x6765;&#x5BF9;&#x5F85;&#x3002;&#x800C;ERE&#x521A;&#x597D;&#x76F8;&#x53CD;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x5F53;&#x505A;meta&#x5B57;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x5E0C;&#x671B;&#x88AB;&#x5F53;&#x505A;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x6765;&#x7528;&#x5219;&#x9700;&#x8981;&#x8F6C;&#x4E49;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x8981;&#x6CE8;&#x610F;&#x4E0B;linux&#x4E0B;&#x7684;grep&#x547D;&#x4EE4;&#x3002;grep&#x547D;&#x4EE4;&#x652F;&#x6301;&#x4E00;&#x4E9B;&#x9009;&#x9879;</p>
+<blockquote>
+<pre><code>  -E, --extended-regexp
+         Interpret PATTERN as an extended regular expression (ERE, see below).
+
+  -F, --fixed-strings
+         Interpret PATTERN as a list of fixed strings (instead of regular expressions), separated by newlines, any of which is to be matched.
+
+  -G, --basic-regexp
+         Interpret PATTERN as a basic regular expression (BRE, see below).  This is the default.
+
+  -P, --perl-regexp
+         Interpret the pattern as a Perl-compatible regular expression (PCRE).  This is experimental and grep -P may warn of unimplemented features.
+</code></pre></blockquote>
+<p>&#x5982;&#x4E0A;grep&#x901A;&#x8FC7;&#x4E0D;&#x540C;&#x7684;&#x9009;&#x9879;&#xFF0C;&#x53EF;&#x4EE5;&#x652F;&#x6301;BRE, ERE, PCRE&#x7B49;&#x7B49;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BED;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;grep&#x547D;&#x4EE4;&#x7684;&#x529F;&#x80FD;&#x8981;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x547D;&#x4EE4;&#x66F4;&#x52A0;&#x5F3A;&#x5927;&#x3002;</p>
+<pre><code class="lang-shell">echo &quot;aaabbbccc&quot; | grep &quot;a\{3\}&quot;    # &#x9ED8;&#x8BA4;&#x662F;BRE
+echo &quot;aaabbbccc&quot; | grep -E &quot;a{3}&quot;   # -E&#x9009;&#x9879;&#x6307;&#x5B9A;&#x4F7F;&#x7528;ERE
+</code></pre>
+<p>&#x76F8;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x6240;&#x5217;&#x7684;BRE&#x548C;ERE&#xFF0C;grep&#x547D;&#x4EE4;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8FD8;&#x652F;&#x6301;&#x4E00;&#x4E9B;&#x7279;&#x6B8A;&#x7684;&#x8BED;&#x6CD5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x7B26;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\&lt;</td>
+<td>&#x5339;&#x914D;&#x5355;&#x8BCD;&#x7684;&#x5F00;&#x5934;&#x3002;&#x5982;\&lt;ab&#x5339;&#x914D;&#x5305;&#x542B;&#x4EE5;ab&#x5F00;&#x5934;&#x7684;&#x5355;&#x8BCD;&#x7684;&#x884C;</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>&#x5339;&#x914D;&#x5355;&#x8BCD;&#x7684;&#x5F00;&#x5934;&#x3002;&#x5982;ab\&gt;&#x5339;&#x914D;&#x5305;&#x542B;&#x4EE5;ab&#x7ED3;&#x5C3E;&#x7684;&#x5355;&#x8BCD;&#x7684;&#x884C;</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>&#x5339;&#x914D;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;[a-zA-Z0-9]</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>&#x8DDF;\w&#x76F8;&#x53CD;&#xFF0C;&#x5339;&#x914D;&#x5B57;&#x6BCD;&#x6570;&#x5B57;&#x4E4B;&#x5916;&#x7684;&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>&#x5355;&#x8BCD;&#x9501;&#x5B9A;&#xFF0C;&#x5982;\bgrep\b &#x5339;&#x914D;grep&#x5355;&#x8BCD;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E3A;&#x4E86;&#x5904;&#x7406;&#x4E0D;&#x540C;&#x56FD;&#x5BB6;&#x7684;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#xFF0C;POSIX&#x5F15;&#x5165;&#x4E86;&#x4E00;&#x7C7B;&#x7279;&#x6B8A;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x6765;&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x7F16;&#x7801;&#x5DEE;&#x5F02;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x7B26;&#x96C6;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[:alnum:]</td>
+<td>&#x6240;&#x6709;&#x5B57;&#x6BCD;&#x548C;&#x6570;&#x5B57;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;a-zA-Z0-9</td>
+</tr>
+<tr>
+<td>[:alpha:]</td>
+<td>&#x6240;&#x6709;&#x5B57;&#x6BCD;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;a-zA-Z</td>
+</tr>
+<tr>
+<td>[:blank:]</td>
+<td>&#x6240;&#x6709;&#x7A7A;&#x767D;&#x5B57;&#x7B26;&#xFF0C;&#x5305;&#x62EC;&#x7A7A;&#x683C;&#x548C;Tab</td>
+</tr>
+<tr>
+<td>[:digit:]</td>
+<td>&#x6240;&#x6709;&#x6570;&#x5B57;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;0-9</td>
+</tr>
+<tr>
+<td>[:graph:]</td>
+<td></td>
+</tr>
+<tr>
+<td>[:lower:]</td>
+<td>&#x6240;&#x6709;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;a-z</td>
+</tr>
+<tr>
+<td>[:upper:]</td>
+<td>&#x6240;&#x6709;&#x5927;&#x5199;&#x5B57;&#x6BCD;A-Z</td>
+</tr>
+<tr>
+<td>[:cntrl:]</td>
+<td>&#x63A7;&#x5236;&#x5B57;&#x7B26;</td>
+</tr>
+<tr>
+<td>[:print:]</td>
+<td></td>
+</tr>
+<tr>
+<td>[:punct:]</td>
+<td>&#x6807;&#x70B9;&#x7B26;&#x53F7;</td>
+</tr>
+<tr>
+<td>[:space:]</td>
+<td></td>
+</tr>
+<tr>
+<td>[:xdigit:]</td>
+<td>16&#x8FDB;&#x5236;&#x6570;&#x5B57;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong> &#x4E0A;&#x9762;&#x7684;&#x5B57;&#x7B26;&#x96C6;&#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x65F6;&#x8981;&#x653E;&#x5728;[]&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;[[:alnum:]]&#x7B49;&#x4EF7;&#x4E8E;[a-zA-Z0-9]&#x3002;&#x53E6;&#x5916;&#xFF0C;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x4E0A;&#x9762;&#x63D0;&#x5230;&#x7684;meta&#x5B57;&#x7B26;&#x90FD;&#x4F1A;&#x4F5C;&#x4E3A;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x6765;&#x5339;&#x914D;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8F6C;&#x4E49;</p>
+<h2 id="&#x5F3A;&#x5927;&#x7684;pcre">&#x5F3A;&#x5927;&#x7684;PCRE</h2>
+<p>&#x4E0A;&#x9762;&#x4ECB;&#x7ECD;grep&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x63D0;&#x5230;&#x4E86;-P&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x3002;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x6307;&#x5B9A;grep&#x4F7F;&#x7528;PCRE&#x8BED;&#x6CD5;&#xFF0C;PCRE&#x662F;&#x9664;&#x4E86;BRE&#x548C;ERE&#x4E4B;&#x5916;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6D41;&#x6D3E;&#xFF0C;&#x4ED6;&#x6307;&#x7684;&#x662F;Perl compatible regular expression&#xFF0C;&#x5373;&#x5B83;&#x7684;&#x8BED;&#x6CD5;&#x6765;&#x81EA;&#x4E8E;perl&#x8BED;&#x8A00;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x8BED;&#x6CD5;&#x3002;</p>
+<p><a href="https://www.pcre.org/current/doc/html/pcre2syntax.html#SEC1" target="_blank">&#x70B9;&#x51FB;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x67E5;&#x770B;PCRE&#x7684;&#x8BED;&#x6CD5;</a></p>
+<p>&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x51E0;&#x4E2A;&#x793A;&#x4F8B;&#x770B;&#x770B;PCRE&#x7684;&#x5F3A;&#x5927;&#xFF1A;</p>
+<pre><code class="lang-shell">
+# &#x83B7;&#x53D6;json&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x67D0;&#x4E2A;&#x5B57;&#x6BB5;&#x7684;&#x503C;
+VALUE=&quot;&quot;
+
+json_get() {
+    local json_string=$1
+    local key=$2
+
+    VALUE=`echo &quot;$json_string&quot; | grep -Po &quot;(?&lt;=${key}\&quot;:).*?(?=,|})&quot; | sed &apos;s/&quot;//g&apos; `
+
+}
+rsp=&apos;{&quot;retcode&quot;:-1, &quot;errorMsg&quot;:&quot;bad gateway&quot;}&apos;
+
+json_get &quot;$rsp&quot; retcode
+echo &quot;$VALUE&quot;               # -1
+
+json_get &quot;$rsp&quot; errorMsg
+echo &quot;$VALUE&quot;               # bad gateway
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="shell函数说明.md" class="navigation navigation-prev " aria-label="Previous page: shell函数说明">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="shell之进程管理.html" class="navigation navigation-next " aria-label="Next page: shell之进程管理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"正则表达式","level":"1.9","depth":1,"next":{"title":"shell之进程管理","level":"1.10","depth":1,"path":"shell之进程管理.md","ref":"shell之进程管理.md","articles":[]},"previous":{"title":"shell函数说明","level":"1.8","depth":1,"path":"shell函数说明.md","ref":"shell函数说明.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","github","-highlight","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"shell_script_learn"},"github":{"url":"https://github.com/tomatoKiller/shell_script_learning"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wurunpeng <wurunpeng@4paradigm.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"shell脚本简介","language":"zh-hans","links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":"*","description":"shell教程"},"file":{"path":"正则表达式.md","mtime":"2018-09-28T01:41:51.968Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-16T13:25:59.199Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

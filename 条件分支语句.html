@@ -1,0 +1,1031 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>条件分支语句 · shell脚本简介</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="wurunpeng <wurunpeng@4paradigm.com>">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="函数说明.html" />
+    
+    
+    <link rel="prev" href="变量定义和使用.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="shell的综述.html">
+            
+                <a href="shell的综述.html">
+            
+                    
+                    shell的综述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="IO重定向与管道.html">
+            
+                <a href="IO重定向与管道.html">
+            
+                    
+                    IO重定向与管道
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="shell中的循环语句.html">
+            
+                <a href="shell中的循环语句.html">
+            
+                    
+                    shell中的循环语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="变量定义和使用.html">
+            
+                <a href="变量定义和使用.html">
+            
+                    
+                    变量定义和使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="条件分支语句.html">
+            
+                <a href="条件分支语句.html">
+            
+                    
+                    条件分支语句
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="函数说明.html">
+            
+                <a href="函数说明.html">
+            
+                    
+                    函数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="shell函数说明.md">
+            
+                <span>
+            
+                    
+                    shell函数说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="正则表达式.html">
+            
+                <a href="正则表达式.html">
+            
+                    
+                    正则表达式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="shell之进程管理.html">
+            
+                <a href="shell之进程管理.html">
+            
+                    
+                    shell之进程管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="shell中的数学运算.html">
+            
+                <a href="shell中的数学运算.html">
+            
+                    
+                    shell中的数学运算
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="shell中的符号扩展.html">
+            
+                <a href="shell中的符号扩展.html">
+            
+                    
+                    shell中的符号扩展
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="shell常用命令.html">
+            
+                <a href="shell常用命令.html">
+            
+                    
+                    shell常用命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="shell中的一些trick.html">
+            
+                <a href="shell中的一些trick.html">
+            
+                    
+                    shell中的一些trick
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="shell中执行命令的几种形式.html">
+            
+                <a href="shell中执行命令的几种形式.html">
+            
+                    
+                    shell中执行命令的几种形式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >条件分支语句</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6761;&#x4EF6;&#x5206;&#x652F;&#x8BED;&#x53E5;">&#x6761;&#x4EF6;&#x5206;&#x652F;&#x8BED;&#x53E5;</h1>
+<p>shell&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#xFF0C;&#x5185;&#x90E8;&#x4E5F;&#x6709;&#x6761;&#x4EF6;&#x4E0E;&#x5206;&#x652F;&#x8BED;&#x6CD5;if/else&#xFF0C;&#x7528;&#x6765;&#x5904;&#x7406;&#x591A;&#x5206;&#x652F;&#x6D41;&#x7A0B;&#x3002;</p>
+<h2 id="ifelse&#x8BED;&#x6CD5;">if/else&#x8BED;&#x6CD5;</h2>
+<h3 id="if&#x540E;&#x7684;condition">if&#x540E;&#x7684;condition</h3>
+<p>&#x4E0B;&#x9762;&#x662F;shell&#x4E2D;&#x7684;if/else&#x8BED;&#x6CD5;&#x5BF9;&#x5E94;&#x7684;&#x4F2A;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-shell">if condition1 AND condition2; then
+    do something
+else if condition3 OR condition4; then
+    do something
+else if NOT condition5; then
+    do something
+fi
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4F2A;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;shell&#x7684;if&#x8BED;&#x53E5;&#x4E2D;&#x662F;&#x662F;&#x652F;&#x6301;&#x6216;&#x3001;&#x4E14;&#x3001;&#x975E;&#x4E09;&#x79CD;&#x903B;&#x8F91;&#x7EC4;&#x5408;&#x7684;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong> shell&#x7684;if&#x8BED;&#x53E5;&#x53EA;&#x80FD;&#x5BF9;&#x9000;&#x51FA;&#x72B6;&#x6001;&#x505A;&#x6D4B;&#x8BD5;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;condition&#x662F;&#x547D;&#x4EE4;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x653E;&#x5728;if&#x8BED;&#x53E5;&#x4E2D;&#xFF1A;</p>
+<pre><code class="lang-shell">if ls; then     # &#x5982;&#x679C;ls&#x6267;&#x884C;&#x6210;&#x529F;&#xFF0C;&#x8FD4;&#x56DE;0(True)
+    echo &quot;ls success&quot;
+else
+    echo &quot;ls failed&quot;
+fi
+</code></pre>
+<p>&#x5982;&#x679C;&#x5E0C;&#x671B;if&#x8BED;&#x53E5;&#x4E2D;&#x5BF9;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x5224;&#x65AD;&#xFF0C;&#x5982;&#x53D8;&#x91CF;&#x6BD4;&#x8F83;&#x3001;&#x6587;&#x4EF6;&#x72B6;&#x6001;&#x6D4B;&#x8BD5;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x501F;&#x52A9;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x7B49;&#x4EF7;&#x7684;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-shell"># &#x4F7F;&#x7528;test&#x547D;&#x4EE4;&#x6765;&#x5C06;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x4E0E;if&#x8054;&#x7528;
+if test &quot;aaa&quot; = &quot;aaa&quot; ; then     # &#x5982;&#x679C;&#x8868;&#x8FBE;&#x5F0F; &quot;aaa&quot;=&quot;aaa&quot;&#x7684;&#x503C;&#x4E3A;True&#xFF0C;&#x8FD4;&#x56DE;0(True)&#x9000;&#x51FA;&#x503C;
+    echo &quot;true&quot;
+else
+    echo &quot;false&quot;
+fi
+
+# &#x4F7F;&#x7528;[]&#x62EC;&#x53F7;&#xFF0C;&#x6765;&#x5C06;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x4E0E;if&#x8054;&#x7528;
+if [ &quot;aaa&quot; = &quot;aaa&quot; ]; then # &#x6CE8;&#x610F;&#x4E2D;&#x62EC;&#x53F7;&#x548C;&#x8868;&#x8FBE;&#x5F0F;&#x4E4B;&#x95F4;&#x90FD;&#x8981;&#x6709;&#x7A7A;&#x683C;&#xFF0C;&#x5426;&#x5219;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;
+    echo &quot;true&quot;
+else
+    echo &quot;false&quot;
+fi
+</code></pre>
+<ol>
+<li>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6765;&#xFF0C;&#x5F53;&#x628A;&#x9000;&#x51FA;&#x72B6;&#x6001;&#x4F5C;&#x4E3A;if&#x7684;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x9000;&#x51FA;&#x72B6;&#x6001;&#x4E3A;0&#xFF0C;&#x8868;&#x793A;True&#xFF0C;&#x6267;&#x884C;if&#x8BED;&#x53E5;&#x903B;&#x8F91;&#xFF1B;&#x5426;&#x5219;&#x5982;&#x679C;&#x9000;&#x51FA;&#x72B6;&#x6001;&#x975E;0&#xFF0C;&#x8868;&#x793A;False&#xFF0C;&#x5219;&#x6267;&#x884C;else&#x5206;&#x652F;&#x3002;<strong>&#x8FD9;&#x70B9;&#x8DDF;&#x5176;&#x4ED6;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x521A;&#x597D;&#x76F8;&#x53CD;</strong>&#xFF01;</li>
+<li>if&#x540E;&#x9762;&#x7684;condition&#x4E2D;&#xFF0C;&#x4E2D;<strong>&#x62EC;&#x53F7;&#x548C;&#x8868;&#x8FBE;&#x5F0F;&#x4E4B;&#x95F4;&#x90FD;&#x8981;&#x6709;&#x7A7A;&#x683C;</strong>&#xFF0C;&#x5426;&#x5219;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;</li>
+</ol>
+<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;">&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;</h3>
+<p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;shell&#x4E2D;&#x6240;&#x6709;&#x53D8;&#x91CF;&#x5747;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#xFF0C;&#x56E0;&#x6B64;&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x8F83;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8868;&#x8FBE;&#x5F0F;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>str1 = str2</td>
+<td>&#x5982;&#x679C;str1&#x548C;str2&#x76F8;&#x540C;&#x5219;&#x4E3A;True</td>
+</tr>
+<tr>
+<td>str1 != str2</td>
+<td>&#x5982;&#x679C;str1&#x548C;str2&#x4E0D;&#x76F8;&#x540C;&#x5219;&#x4E3A;True</td>
+</tr>
+<tr>
+<td>str1 &gt; str2</td>
+<td>&#x5982;&#x679C;str1 &gt; str2 &#x5219;&#x4E3A;True</td>
+</tr>
+<tr>
+<td>str1 &lt; str2</td>
+<td>&#x5982;&#x679C;str1 &lt; str2 &#x5219;&#x4E3A;True</td>
+</tr>
+<tr>
+<td>-n str</td>
+<td>&#x5982;&#x679C;str&#x975E;null(&#x957F;&#x5EA6;&#x5927;&#x4E8E;0)&#x5219;&#x4E3A;True</td>
+</tr>
+<tr>
+<td>-z str</td>
+<td>&#x5982;&#x679C;str&#x4E3A;null(&#x957F;&#x5EA6;&#x4E3A;0)&#x5219;&#x4E3A;True</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong></p>
+<ol>
+<li>&#x4E0A;&#x8FF0;&#x5B57;&#x7B26;&#x4E32;&#x5927;&#x5C0F;&#x6BD4;&#x8F83;&#x65F6;&#xFF0C;&#x9488;&#x5BF9;&gt;&#x548C;&lt;&#x53F7;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x65F6;&#x5FC5;&#x987B;&#x4F7F;&#x7528;\&#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#xFF0C;&#x5426;&#x5219;shell&#x4F1A;&#x8BEF;&#x628A;&#x5176;&#x5F53;&#x6210;&#x662F;&#x91CD;&#x5B9A;&#x5411;&#x7B26;&#x53F7;&#x3002;</li>
+<li>&#x5728;&#x505A;&#x76F8;&#x7B49;&#x6027;&#x6BD4;&#x8F83;&#x65F6;&#xFF0C;=&#x548C;==&#x662F;&#x7B49;&#x4EF7;&#x7684;</li>
+</ol>
+<pre><code class="lang-shell">if [ &quot;aaa&quot; \&gt; &quot;bbb&quot; ]; then
+    echo &quot;aaa &gt; bbb&quot;
+fi
+
+if [ -z &quot;&quot; ]; then
+    echo &quot;empty str&quot;
+fi
+</code></pre>
+<h3 id="&#x6570;&#x5B57;&#x6BD4;&#x8F83;">&#x6570;&#x5B57;&#x6BD4;&#x8F83;</h3>
+<p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;shell&#x4E2D;&#x53EA;&#x6709;&#x5B57;&#x7B26;&#x4E32;&#x53D8;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x8FDB;&#x884C;&#x6570;&#x5B57;&#x5927;&#x5C0F;&#x7684;&#x6BD4;&#x8F83;&#xFF0C;&#x4E0D;&#x80FD;&#x7B80;&#x5355;&#x7684;&#x4F7F;&#x7528;&lt;&#x548C;&gt;&#x7B26;&#x53F7;&#xFF0C;&#x56E0;&#x4E3A;&#x9ED8;&#x8BA4;&lt;&#x548C;&gt;&#x662F;&#x6309;&#x7167;&#x5B57;&#x7B26;&#x4E32;&#x683C;&#x5F0F;&#x6765;&#x6BD4;&#x8F83;&#x7684;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8868;&#x8FBE;&#x5F0F;</th>
+<th>&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>n1 -gt n2</td>
+<td>&#x6570;&#x5B57;n1&#x5927;&#x4E8E;n2</td>
+</tr>
+<tr>
+<td>n1 -ge n2</td>
+<td>&#x6570;&#x5B57;n1&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;n2</td>
+</tr>
+<tr>
+<td>n1 -eq n2</td>
+<td>&#x6570;&#x5B57;n1&#x7B49;&#x4E8E;n2</td>
+</tr>
+<tr>
+<td>n1 -lt n2</td>
+<td>&#x6570;&#x5B57;n1&#x5C0F;&#x4E8E;n2</td>
+</tr>
+<tr>
+<td>n1 -le n2</td>
+<td>&#x6570;&#x5B57;n1&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;n2</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-shell">if [ 3 -gt 4 ]; then
+    echo &quot;imposible&quot;
+fi
+</code></pre>
+<h3 id="&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#x6D4B;&#x8BD5;">&#x6587;&#x4EF6;&#x5C5E;&#x6027;&#x6D4B;&#x8BD5;</h3>
+<table>
+<thead>
+<tr>
+<th>&#x8868;&#x8FBE;&#x5F0F;</th>
+<th>&#x542B;&#x4E49;(&#x4E3A;True&#xFF09;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-f file</td>
+<td>file&#x4E3A;&#x5E38;&#x89C4;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>-b file</td>
+<td>file&#x4E3A;&#x5757;&#x8BBE;&#x5907;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>-c file</td>
+<td>file&#x4E3A;&#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>-p file</td>
+<td>file&#x4E3A;&#x7BA1;&#x9053;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>-S file</td>
+<td>file&#x4E3A;socket&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>file&#x6587;&#x4EF6;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>-s file</td>
+<td>file&#x6587;&#x4EF6;&#x4E0D;&#x4E3A;&#x7A7A;</td>
+</tr>
+<tr>
+<td>-u file</td>
+<td>file&#x7684;SUID&#x88AB;&#x8BBE;&#x7F6E;</td>
+</tr>
+<tr>
+<td>-g file</td>
+<td>file&#x7684;SGID&#x88AB;&#x8BBE;&#x7F6E;</td>
+</tr>
+<tr>
+<td>-L file</td>
+<td>file&#x4E3A;&#x7B26;&#x53F7;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>-h file</td>
+<td>file&#x4E3A;&#x7B26;&#x53F7;&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>file&#x53EF;&#x8BFB;</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>file&#x53EF;&#x5199;</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>file&#x53EF;&#x6267;&#x884C;</td>
+</tr>
+<tr>
+<td>-O file</td>
+<td>&#x811A;&#x672C;&#x6267;&#x884C;&#x4EBA;&#x662F;file&#x7684;&#x62E5;&#x6709;&#x4EBA;</td>
+</tr>
+<tr>
+<td>-G file</td>
+<td>&#x811A;&#x672C;&#x6267;&#x884C;&#x4EBA;&#x7684;ID&#x548C;file&#x7684;&#x7EC4;ID&#x76F8;&#x540C;</td>
+</tr>
+<tr>
+<td>file1 -nt file2</td>
+<td>file1 &#x6BD4; file2&#x65B0;</td>
+</tr>
+<tr>
+<td>file1 -ot file2</td>
+<td>file1 &#x6BD4; file2&#x65E7;</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-shell"># &#x68C0;&#x67E5;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x4E0E;&#x6743;&#x9650;
+
+# description: -f  &#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x4E3A;&#x5E38;&#x89C4;&#x6587;&#x4EF6;
+test_regular_file() {
+    if [ -f &quot;$1&quot; ]; then
+        echo &quot;$1 is regular file&quot;
+    else
+        echo &quot;$1 isn&apos;t regular file&quot;
+    fi
+}
+
+# description: -d  &#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x4E3A;&#x76EE;&#x5F55;
+test_file_directory() {
+    if [ -d &quot;$1&quot; ]; then
+        echo &quot;$1 is directory&quot;
+    else
+        echo &quot;$1 isn&apos;t directory&quot;
+    fi
+}
+
+
+# description: -e &#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x5B58;&#x5728;
+test_file_exists() {
+    if [ -e &quot;$1&quot; ]; then
+        echo &quot;$1 exists&quot;
+    else
+        echo &quot;$1 don&apos;t exists&quot;
+    fi
+}
+
+
+# description: -L &#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x4E3A;&#x7B26;&#x53F7;&#x94FE;&#x63A5;&#x6587;&#x4EF6;
+test_file_symbol_link() {
+    if [ -L &quot;$1&quot; ]; then
+        echo &quot;$1 is symbol link file&quot;
+    else
+        echo &quot;$1 isn&apos;t symbol link file&quot;
+    fi
+}
+
+# description: -r &#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x53EF;&#x8BFB;
+test_file_read() {
+    if [ -r &quot;$1&quot; ]; then
+        echo &quot;$1 can be readed&quot;
+    else
+        echo &quot;$1 can&apos;t be readed&quot;
+    fi
+}
+
+# description: -w &#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x53EF;&#x5199;
+test_file_write() {
+    if [ -w &quot;$1&quot; ]; then
+        echo &quot;$1 can be writed&quot;
+    else
+        echo &quot;$1 can&apos;t be writed&quot;
+    fi
+}
+
+# description: -x &#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x662F;&#x5426;&#x53EF;&#x6267;&#x884C;
+test_file_execute() {
+    if [ -x &quot;$1&quot; ]; then
+        echo &quot;$1 can be executed&quot;
+    else
+        echo &quot;$1 can&apos;t be executed&quot;
+    fi
+}
+
+
+# description: -s &#x6D4B;&#x8BD5;&#x6587;&#x4EF6;&#x662F;&#x5426; &#x4E3A;&#x7A7A;&#x767D;&#x6587;&#x4EF6;
+test_file_empty() {
+    if [ -s &quot;$1&quot; ]; then
+        echo &quot;$1 isn&apos;t empty file&quot;
+    else
+        echo &quot;$1 is empty file&quot;
+    fi
+}
+
+
+# description: -u &#x6D4B;&#x8BD5;&#x6587;&#x4EF6; SUID&#x6807;&#x5FD7;&#x4F4D;&#x662F;&#x5426;&#x88AB;&#x8BBE;&#x7F6E;
+test_file_SUID() {
+    if [ -u &quot;$1&quot; ]; then
+        echo &quot;$1 SUID flag is set&quot;
+    else
+        echo &quot;$1 SUID flag isn&apos;t set&quot;
+    fi
+}
+
+# description: -g &#x6D4B;&#x8BD5;&#x6587;&#x4EF6; SGID&#x6807;&#x5FD7;&#x4F4D;&#x662F;&#x5426;&#x88AB;&#x8BBE;&#x7F6E;
+test_file_SGID() {
+    if [ -g &quot;$1&quot; ]; then
+        echo &quot;$1 SGID flag is set&quot;
+    else
+        echo &quot;$1 SGID flag isn&apos;t set&quot;
+    fi
+}
+
+
+# description: -nt &#x6D4B;&#x8BD5; &#x6587;&#x4EF6;1 &#x662F;&#x5426;&#x6BD4; &#x6587;&#x4EF6;2 &#x65B0;
+test_file_newer() {
+    if [ &quot;$1&quot; -nt &quot;$2&quot; ]; then
+        echo &quot;$1 is newer than $2&quot;
+    else
+        echo &quot;$1 isn&apos;t newer than $2&quot;
+    fi
+}
+
+
+# description: -nt &#x6D4B;&#x8BD5; &#x6587;&#x4EF6;1 &#x662F;&#x5426;&#x6BD4; &#x6587;&#x4EF6;2 &#x65E7;
+test_file_older() {
+    if [ &quot;$1&quot; -ot &quot;$2&quot; ]; then
+        echo &quot;$1 is older than $2&quot;
+    else
+        echo &quot;$1 isn&apos;t older than $2&quot;
+    fi
+}
+
+FILE_NAME=&quot;&quot;
+
+create_file_with_timestamp() {
+   now=$(date +%Y%m%d_%H_%M_%S)
+   FILE_NAME=&quot;text_${now}.txt&quot;
+}
+
+# ---------------------------------- entry point ------------------------------------
+
+create_file_with_timestamp
+text1=$FILE_NAME
+touch &quot;$text1&quot;
+
+
+
+mkdir directory
+ln -s &quot;$text1&quot; text.txt.symbolic_link
+
+
+test_regular_file &quot;$text1&quot;
+
+test_file_directory &quot;$text1&quot;
+test_file_directory directory
+
+test_file_symbol_link &quot;text.txt.symbolic_link&quot;
+
+test_file_exists &quot;$text1&quot;
+test_file_exists other_file
+
+test_file_empty &quot;$text1&quot;
+echo &quot;content&quot; &gt; &quot;$text1&quot;
+test_file_empty &quot;$text1&quot;
+
+test_file_read &quot;$text1&quot;
+test_file_write &quot;$text1&quot;
+
+test_file_execute &quot;$text1&quot;
+chmod u+x &quot;$text1&quot;
+test_file_execute &quot;$text1&quot;
+
+test_file_SUID &quot;$text1&quot;
+chmod u+s &quot;$text1&quot;
+test_file_SUID &quot;$text1&quot;
+
+test_file_SGID &quot;$text1&quot;
+chmod g+s &quot;$text1&quot;
+test_file_SGID &quot;$text1&quot;
+
+sleep 3
+create_file_with_timestamp
+text2=$FILE_NAME
+touch &quot;$text2&quot;
+
+test_file_newer &quot;$text1&quot; &quot;$text2&quot;
+test_file_older &quot;$text1&quot; &quot;$text2&quot;
+</code></pre>
+<h3 id="if&#x6761;&#x4EF6;&#x903B;&#x8F91;&#x7EC4;&#x5408;">if&#x6761;&#x4EF6;&#x903B;&#x8F91;&#x7EC4;&#x5408;</h3>
+<p>&#x5982;&#x524D;&#x6240;&#x8FF0;&#xFF0C;if&#x540E;&#x9762;&#x53EF;&#x8DDF;&#x591A;&#x4E2A;condition&#xFF0C;&#x652F;&#x6301;AND/OR/NOT&#x7B49;&#x903B;&#x8F91;&#x7EC4;&#x5408;&#x3002;</p>
+<pre><code class="lang-shell"># AND&#x8BED;&#x6CD5;1
+if [ &quot;3&quot; \&gt; &quot;2&quot; ] &amp;&amp; [ &quot;2&quot; \&lt; &quot;1&quot; ];then
+    echo &quot;true&quot;
+fi
+
+# AND&#x8BED;&#x6CD5;2
+if [ &quot;3&quot; \&gt; &quot;2&quot; -a &quot;2&quot; \&lt; &quot;1&quot; ];then
+    echo &quot;true&quot;
+fi
+
+# OR&#x8BED;&#x6CD5;1
+if [ &quot;3&quot; \&gt; &quot;2&quot; ] || [ &quot;2&quot; \&lt; &quot;1&quot; ];then
+    echo &quot;true&quot;
+fi
+
+# OR&#x8BED;&#x6CD5;2
+if [ &quot;3&quot; \&gt; &quot;2&quot; -o &quot;2&quot; \&lt; &quot;1&quot; ];then
+    echo &quot;true&quot;
+fi
+
+# NOT&#x8BED;&#x6CD5;
+if [ &quot;3&quot; \&gt; &quot;2&quot; -o ! &quot;2&quot; \&lt; &quot;1&quot; ]; then
+    echo &quot;true&quot;
+fi
+</code></pre>
+<h3 id="if&#x8BED;&#x53E5;&#x7B80;&#x5316;">if&#x8BED;&#x53E5;&#x7B80;&#x5316;</h3>
+<p>&#x5229;&#x7528;&amp;&amp;&#x548C;||&#x7684;&#x539F;&#x7406;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x4E00;&#x4E9B;if&#x8BED;&#x53E5;&#x7B80;&#x5316;&#x3002;</p>
+<pre><code class="lang-shell">[ -f file1 ] &amp;&amp; cat file1   # &#x5982;&#x679C;file1&#x5B58;&#x5728;&#x4E14;&#x4E3A;&#x5E38;&#x89C4;&#x6587;&#x4EF6;&#xFF0C;&#x5219;&#x6253;&#x5370;&#x5176;&#x5185;&#x5BB9;
+[ -e file1 ] || touch file1 # &#x5982;&#x679C;file1&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x5229;&#x7528;touch&#x547D;&#x4EE4;&#x6765;&#x521B;&#x5EFA;
+</code></pre>
+<h3 id="-&#x548C;--&#x7684;&#x533A;&#x522B;">[ ] &#x548C; [[ ]]&#x7684;&#x533A;&#x522B;</h3>
+<p>&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8BED;&#x53E5;&#x4E2D;&#x7684;condition&#x521A;&#x624D;&#x4ECB;&#x7ECD;&#x4E86;2&#x79CD;&#x5199;&#x6CD5;&#xFF1A;test expr &#x548C; [ expr ]&#x3002;&#x8FD9;&#x4E24;&#x79CD;&#x5199;&#x6CD5;&#x662F;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;&#x3002;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E00;&#x79CD;shell&#x5185;&#x90E8;&#x652F;&#x6301;&#x7684;&#x5199;&#x6CD5;[[]]&#xFF0C;&#x5373;2&#x4E2A;&#x4E2D;&#x62EC;&#x53F7;&#xFF0C;&#x8FD9;&#x4E2A;&#x5199;&#x6CD5;&#x4E0E;&#x521A;&#x624D;&#x7684;&#x4E24;&#x79CD;&#x5199;&#x6CD5;&#x5728;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x4E0A;&#x9762;&#x6709;&#x8F83;&#x5927;&#x7684;&#x4E0D;&#x540C;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>&#x8868;&#x8FBE;&#x5F0F;</th>
+<th>&#x5B9E;&#x8D28;</th>
+<th>&#x7279;&#x70B9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>test&#x548C;[]</td>
+<td>shell&#x7684;&#x5185;&#x90E8;&#x547D;&#x4EE4;&#x3002;condition&#x662F;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#x7684;&#x3002;&#x5927;&#x591A;&#x6570;shell&#x90FD;&#x652F;&#x6301;</td>
+<td>1.&lt;&#x548C;&gt;&#x9700;&#x8981;&#x8F6C;&#x4E49;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x88AB;&#x5F53;&#x505A;&#x91CD;&#x5B9A;&#x5411;&#x7B26;&#x53F7;&#x3002;<br>2. condition&#x53EF;&#x4EE5;&#x6574;&#x4F53;&#x653E;&#x5728;&#x53CC;&#x5F15;&#x53F7;&#x4E2D;&#xFF0C;&#x6BD4;&#x5982;&quot;4&quot; &quot;&lt;&quot; &quot;3&quot;&#xFF0C;&#x56E0;&#x4E3A;&#x5728;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x53BB;&#x6389;&#x53CC;&#x5F15;&#x53F7;<br> 3. [ condition1 -a condition2 ] &#x6CA1;&#x6709;&#x903B;&#x8F91;&#x77ED;&#x8DEF;</td>
+</tr>
+<tr>
+<td>[[]]</td>
+<td>bash&#x7684;&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x90E8;&#x5206;shell&#x652F;&#x6301;</td>
+<td>1. &#x5185;&#x90E8;&lt; &#x548C; &gt;&#x4E0D;&#x9700;&#x8981;&#x8F6C;&#x4E49;<br>2. &#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&amp;&amp; \</td>
+<td>\</td>
+<td><br> 3. [[ condition1 &amp;&amp; condition2 ]] &#x4F1A;&#x6709;&#x903B;&#x8F91;&#x77ED;&#x8DEF;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>[[]]&#x5B57;&#x7B26;&#x4E32;&#x6BD4;&#x5927;&#x5C0F;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#x8F6C;&#x4E49;&#xFF0C;&#x4E0B;&#x9762;2&#x4E2D;&#x5199;&#x6CD5;&#x4E00;&#x81F4;</li>
+</ul>
+<pre><code class="lang-shell">if [ &quot;4&quot; \&lt; &quot;3&quot; ]; then
+    echo &quot;ttt&quot;
+fi
+
+if [[ &quot;4&quot; &lt; &quot;3&quot; ]]; then
+    echo &quot;ttt&quot;
+fi
+</code></pre>
+<ul>
+<li>[[]]&#x652F;&#x6301;&#x5728;&#x5185;&#x90E8;&#x5199; &amp;&amp; &#x548C; || &#x3002;&#x4E0B;&#x9762;&#x4E09;&#x79CD;&#x5199;&#x6CD5;&#x4E00;&#x81F4;</li>
+</ul>
+<pre><code class="lang-shell">if [ &quot;3&quot; \&gt; &quot;2&quot; -a &quot;4&quot; \&gt; &quot;3&quot; ]; then
+    echo &quot;true&quot;
+fi
+
+if [ &quot;3&quot; \&gt; &quot;2&quot; ] &amp;&amp; [ &quot;4&quot; \&gt; &quot;3&quot; ]; then
+    echo &quot;true&quot;
+fi
+
+if [[ &quot;3&quot; &gt; &quot;2&quot; &amp;&amp; &quot;4&quot; &gt; &quot;3&quot; ]]; then
+    echo &quot;true&quot;
+fi
+</code></pre>
+<ul>
+<li>[[]]&#x652F;&#x6301;&#x7B80;&#x5355;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x6A21;&#x5F0F;&#x5339;&#x914D;&#x3002;<strong>&#x6CE8;&#x610F;</strong>&#x6A21;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;&#x5FC5;&#x987B;&#x653E;&#x5728;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x52A0;&#x53CC;&#x5F15;&#x53F7;&#x3002;&#x5982;&#x679C;&#x52A0;&#x4E86;&#x53CC;&#x5F15;&#x53F7;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x5F53;&#x505A;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x5F85;&#x3002;&#x8FD9;&#x91CC;&#x7684;=&#x548C;==&#x7B49;&#x4EF7;&#x3002;&#x5982;&#x679C;shell&#x7684;nocasematch&#x9009;&#x9879;&#x88AB;&#x6253;&#x5F00;&#xFF0C;&#x5219;&#x5339;&#x914D;&#x65F6;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</li>
+</ul>
+<pre><code class="lang-shell"># &#x6A21;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;&#x5FC5;&#x987B;&#x653E;&#x5728;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x52A0;&#x53CC;&#x5F15;&#x53F7;
+if [[ &quot;abc&quot; == a* ]]; then
+    echo &quot;bingo&quot;
+fi
+</code></pre>
+<ul>
+<li>[[]]&#x652F;&#x6301;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x5339;&#x914D;&#x3002; &#x8FD9;&#x91CC;&#x8981;&#x4F7F;&#x7528;=~&#x7B26;&#x53F7;&#xFF0C;&#x6A21;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;&#x5FC5;&#x987B;&#x653E;&#x5728;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x52A0;&#x53CC;&#x5F15;&#x53F7;&#x3002;&#x5982;&#x679C;&#x52A0;&#x4E86;&#x53CC;&#x5F15;&#x53F7;&#xFF0C;&#x5219;&#x4F1A;&#x88AB;&#x5F53;&#x505A;&#x666E;&#x901A;&#x5B57;&#x7B26;&#x4E32;&#x5BF9;&#x5F85;&#x3002;&#x5982;&#x679C;shell&#x7684;nocasematch&#x9009;&#x9879;&#x88AB;&#x6253;&#x5F00;&#xFF0C;&#x5219;&#x5339;&#x914D;&#x65F6;&#x4E0D;&#x533A;&#x5206;&#x5927;&#x5C0F;&#x5199;</li>
+</ul>
+<pre><code class="lang-shell"># &#x6A21;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;&#x5FC5;&#x987B;&#x653E;&#x5728;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x52A0;&#x53CC;&#x5F15;&#x53F7;
+if [[ &quot;/aaa/bbb/ccc&quot; =~ /*c{3} ]]; then
+    echo &quot;bingo&quot;
+fi
+</code></pre>
+<p>&#x4F7F;&#x7528;=~&#x8FDB;&#x884C;&#x6B63;&#x5219;&#x5339;&#x914D;&#x65F6;&#xFF0C;&#x5339;&#x914D;&#x7ED3;&#x679C;&#x4F1A;&#x5B58;&#x50A8;&#x5728;&#x6570;&#x7EC4;&#x53D8;&#x91CF;BASH_REMATCH&#x4E2D;&#x3002;${BASH_REMATCH[0]}&#x8868;&#x793A;&#x6574;&#x4E2A;&#x88AB;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;${BASH_REMATCH[n]}&#x4EE3;&#x8868;&#x6A21;&#x5F0F;&#x4E2D;&#x7B2C;n&#x4E2A;&#x5C0F;&#x62EC;&#x53F7;&#x5185;&#x6240;&#x5339;&#x914D;&#x5230;&#x7684;&#x90E8;&#x5206;&#x3002;</p>
+<p>&#x9488;&#x5BF9;&#x4E0A;&#x9762;&#x7684;&#x6B63;&#x5219;&#x5339;&#x914D;&#xFF0C;pattern&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5F15;&#x53F7;&#x548C;\&#x9700;&#x8981;&#x7ED9;&#x5C0F;&#x5FC3;&#x5BF9;&#x5F85;&#x3002;&#x5728;pattern&#x4E2D;&#xFF0C;&#x53CC;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x90E8;&#x5206;&#x76F4;&#x63A5;&#x4F5C;&#x4E3A;&#x539F;&#x59CB;&#x5B57;&#x7B26;&#x6765;&#x5339;&#x914D;&#xFF0C;&#x800C;&#x5355;&#x5F15;&#x53F7;&#x62EC;&#x8D77;&#x6765;&#x7684;&#x90E8;&#x5206;&#x5219;&#x4FDD;&#x7559;&#x5176;&#x5728;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x7684;&#x539F;&#x59CB;&#x542B;&#x4E49;&#x3002;&#x5982;&apos;a.b&apos;&#x4E2D;&#x7684;.&#x8868;&#x793A;&#x5339;&#x914D;&#x6240;&#x6709;&#x5B57;&#x7B26;&#xFF0C;&#x800C;&quot;a.b&quot;&#x4E2D;&#x7684;.&#x5C31;&#x53EA;&#x5339;&#x914D;.&#x7B26;&#x53F7;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;pattern&#x4E2D;&#x7684;\&#x7528;&#x6765;&#x5BF9;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#x8FDB;&#x884C;&#x8F6C;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x5F53;pattern&#x662F;&#x5B58;&#x50A8;&#x5728;&#x67D0;&#x4E2A;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x5C0F;&#x5FC3;&#x5BF9;&#x5F85;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x5F15;&#x8D77;&#x9519;&#x8BEF;&#x3002;</p>
+<pre><code class="lang-shell">pattern=&apos;\.&apos;
+
+[[ . =~ $pattern ]]     # &#x6210;&#x529F;&#x5339;&#x914D;
+[[ . =~ \. ]]           # &#x6210;&#x529F;&#x5339;&#x914D;
+
+[[ . =~ &quot;$pattern&quot; ]]   # &#x5339;&#x914D;&#x5931;&#x8D25;
+[[ . =~ &apos;\.&apos; ]]         # &#x5339;&#x914D;&#x5931;&#x8D25;
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x524D;&#x4E24;&#x4E2A;&#x5339;&#x914D;&#x6210;&#x529F;&#xFF0C;\&#x7B26;&#x53F7;&#x5BF9;.&#x7B26;&#x53F7;&#x8FDB;&#x884C;&#x4E86;&#x8F6C;&#x4E49;&#x3002; &#x540E;&#x4E24;&#x4E2A;&#x5339;&#x914D;&#x5931;&#x8D25;&#xFF0C;&#x539F;&#x56E0;&#x662F;\&#x4E5F;&#x88AB;&#x5F53;&#x6210;&#x662F;&#x9700;&#x8981;&#x88AB;&#x5339;&#x914D;&#x7684;&#x5B57;&#x7B26;&#x4E86;&#x3002;</p>
+<h3 id="condition&#x5185;&#x7A7A;&#x683C;&#x7684;&#x5F3A;&#x8C03;">condition&#x5185;&#x7A7A;&#x683C;&#x7684;&#x5F3A;&#x8C03;</h3>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong> &#x65E0;&#x8BBA;&#x5BF9;&#x4E8E;test&#x3001;[]&#x3001;&#x8FD8;&#x662F;[[]]&#xFF0C;&#x53D8;&#x91CF;&#x548C;&#x6BD4;&#x8F83;&#x8FD0;&#x7B97;&#x7B26;&#x4EE5;&#x53CA;&#x5916;&#x56F4;&#x7684;&#x4E2D;&#x62EC;&#x53F7;&#x4E4B;&#x95F4;&#x90FD;&#x5FC5;&#x987B;&#x6709;&#x7A7A;&#x683C;&#xFF01;&#x5982;&#x679C;&#x5C11;&#x4E86;&#x7A7A;&#x683C;&#xFF0C;&#x53EF;&#x80FD;&#x62A5;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#x548C;&#x9884;&#x671F;&#x4E0D;&#x7B26;&#x3002;
+&#x731C;&#x731C;&#x770B;&#x4E0B;&#x9762;&#x4E24;&#x79CD;&#x5199;&#x6CD5;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code class="lang-shell"># &#x6B63;&#x786E;&#x5199;&#x6CD5;
+if [[ 1 == 2 ]]; then
+    echo &quot;imposible&quot;
+fi
+
+# &#x9519;&#x8BEF;&#x5199;&#x6CD5;
+if [[ 1==2 ]]; then
+    echo &quot;imposible&quot;
+fi
+</code></pre>
+<h3 id="&#x5229;&#x7528;-&#x6765;&#x4F5C;&#x4E3A;&#x6570;&#x503C;&#x6BD4;&#x8F83;&#x7684;condition">&#x5229;&#x7528;(( ))&#x6765;&#x4F5C;&#x4E3A;&#x6570;&#x503C;&#x6BD4;&#x8F83;&#x7684;condition</h3>
+<p>&#x4E0A;&#x9762;&#x5DF2;&#x7ECF;&#x4ECB;&#x7ECD;&#x4E86;&#x591A;&#x79CD;condition&#x5199;&#x6CD5;&#xFF0C;&#x8FD9;&#x91CC;&#x518D;&#x4ECB;&#x7ECD;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;(( ))&#x3002;(( ))&#x5185;&#x90E8;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x6570;&#x5B66;&#x8FD0;&#x7B97;&#x53CA;<strong>&#x6570;&#x503C;&#x6BD4;&#x8F83;</strong>&#xFF0C;&#x5B83;&#x7684;&#x9000;&#x51FA;&#x72B6;&#x6001;&#x662F;0&#x6216;&#x8005;&#x975E;0&#xFF08;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x662F;1&#xFF09;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x662F;&#x4E0E;&#x975E;&#x7684;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x3002; (( ))&#x547D;&#x4EE4;&#x652F;&#x6301;&#x4E0B;&#x5217;&#x6BD4;&#x8F83;&#x64CD;&#x4F5C;&#x7B26;&#xFF1A;&apos;==&apos;, &apos;!=&apos;, &apos;&gt;&apos;, &apos;&lt;&apos;, &apos;&gt;=&apos;&#xFF0C;&#x548C;&apos;&lt;=&apos;&#x3002;</p>
+<pre><code class="lang-shell">var=5
+if((var&gt;=2*1))
+then
+    echo &quot;bingo&quot;
+fi
+</code></pre>
+<h2 id="case&#x8BED;&#x53E5;">case&#x8BED;&#x53E5;</h2>
+<p>case&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x8FBE;&#x5230;&#x548C;if/else&#x76F8;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;&#x4F46;&#x662F;&#x9488;&#x5BF9;&#x5206;&#x652F;&#x8FC7;&#x591A;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x4F7F;&#x7528;case&#x8BED;&#x53E5;&#x80FD;&#x591F;&#x51CF;&#x5C11;&#x4EE3;&#x7801;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x4F7F;&#x4EE3;&#x7801;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x3002;&#x4E0B;&#x9762;&#x4F2A;&#x4EE3;&#x7801;&#x5C55;&#x793A;&#x4E86;case&#x8BED;&#x53E5;&#x7684;&#x683C;&#x5F0F;&#x3002;</p>
+<pre><code class="lang-shell">case word in
+pattern1)
+    command1;;
+pattern2|pattern3)
+    command2;;
+*)
+    command3;;
+esac
+</code></pre>
+<p>&#x5176;&#x4E2D;pattern&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x79CD;&#x5F62;&#x5F0F;&#x3002;</p>
+<ol>
+<li>&#x7528;|&#x7B26;&#x53F7;&#x6765;&#x8FDE;&#x63A5;&#x591A;&#x4E2A;pattern&#xFF0C;&#x53D6;&#x903B;&#x8F91;&#x6216;&#x7684;&#x542B;&#x4E49;</li>
+<li>pattern&#x5185;&#x90E8;&#x5305;&#x542B;*&#x7B26;&#x53F7;&#x4F5C;&#x4E3A;&#x901A;&#x914D;&#x7B26;</li>
+<li>&#x91C7;&#x7528;*&#x7B26;&#x53F7;&#x6765;&#x4F5C;&#x4E3A;pattern&#xFF0C;&#x5339;&#x914D;&#x6240;&#x6709;&#x7684;&#x60C5;&#x51B5;(&#x4F5C;default&#x7528;)&#x3002;</li>
+</ol>
+<p>&#x5728;&#x5C06;word&#x4E0E;pattern&#x8FDB;&#x884C;&#x5339;&#x914D;&#x4E4B;&#x524D;&#xFF0C;&#x4F1A;&#x5148;&#x5BF9;word&#x8FDB;&#x884C;&#x6269;&#x5C55;(~&#x6269;&#x5C55;&#xFF0C;&#x53D8;&#x91CF;&#x6269;&#x5C55;&#xFF0C;&#x547D;&#x4EE4;&#x66FF;&#x6362;&#xFF0C;&#x6570;&#x5B66;&#x8BA1;&#x7B97;)&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;case&#x4E2D;&#x53EF;&#x4EE5;&#x505A;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x5339;&#x914D;</p>
+<pre><code class="lang-shell">case &quot;aa&quot; in
+aa)
+    echo &quot;this is aa&quot;
+    ;;
+bb)
+    echo &quot;this is bb&quot;
+    ;;
+cc|ee)
+    echo &quot;this is cc or ee&quot;
+    ;;
+d*)
+    echo &quot;this is begin with d&quot;
+    ;;
+*)  # default
+    echo &quot;unkown&quot;
+    ;;
+esac
+
+case $((3*4)) in
+12)
+    echo &quot;12&quot;;;     # &#x8F93;&#x51FA;12
+13)
+    echo &quot;13&quot;;;
+esac
+
+case `echo aa` in
+aa)
+    echo &quot;aa&quot;;;     # &#x8F93;&#x51FA;aa
+*)
+    echo &quot;other&quot;;;
+</code></pre>
+<p>case&#x8BED;&#x53E5;&#x4E2D;&#x6BCF;&#x4E2A;&#x5339;&#x914D;&#x5230;&#x7684;pattern&#x4E0B;&#x90FD;&#x6709;&#x82E5;&#x5E72;command&#xFF0C;command&#x7684;&#x7ED3;&#x5C3E;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x79CD;&#xFF0C;&#x5206;&#x522B;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x542B;&#x4E49;</p>
+<ol>
+<li>;;&#x7ED3;&#x5C3E;&#x7B26;&#x8868;&#x793A;&#x4EC5;&#x4EC5;&#x6267;&#x884C;&#x5F53;&#x524D;&#x5339;&#x914D;&#x5230;&#x7684;command&#xFF0C;&#x6267;&#x884C;&#x5B8C;&#x5373;&#x7ED3;&#x675F;</li>
+<li>;&amp;&#x7ED3;&#x5C3E;&#x7B26;&#x8868;&#x793A;&#x4ECE;&#x5F53;&#x524D;&#x5339;&#x914D;&#x5230;&#x7684;command&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x6240;&#x6709;&#x7684;pattern&#x5BF9;&#x5E94;&#x7684;command&#xFF0C;&#x4E00;&#x76F4;&#x5230;case&#x8BED;&#x53E5;&#x7ED3;&#x675F;</li>
+<li>;;&amp;&#x7ED3;&#x5C3E;&#x7B26;&#x8868;&#x793A;&#x4ECE;&#x5F53;&#x524D;&#x5339;&#x914D;&#x5230;&#x7684;command&#x5F00;&#x59CB;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E;&#x987A;&#x5E8F;&#x6267;&#x884C;&#x4E0B;&#x9762;&#x80FD;&#x5339;&#x914D;&#x6210;&#x529F;&#x7684;pattern&#x5BF9;&#x5E94;&#x7684;command&#xFF0C;&#x4E00;&#x76F4;&#x5230;case&#x8BED;&#x53E5;&#x7ED3;&#x675F;</li>
+</ol>
+<pre><code class="lang-shell">case &quot;aa&quot; in
+aa)
+    echo &quot;aa&quot;
+    ;&amp;
+bb)
+    echo &quot;bb&quot;
+    ;&amp;
+esac
+
+case &quot;aa&quot; in
+aa)
+    echo &quot;aa&quot;
+    ;;&amp;
+bb)
+    echo &quot;bb&quot;
+    ;;&amp;
+a*)
+    echo &quot;bb&quot;
+    ;;&amp;
+esac
+</code></pre>
+<h2 id="select&#x8BED;&#x53E5;">select&#x8BED;&#x53E5;</h2>
+<p>select&#x8BED;&#x53E5;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5FEB;&#x901F;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x83DC;&#x5355;&#xFF0C;&#x5176;&#x8BED;&#x6CD5;&#x7C7B;&#x4F3C;&#x4E8E;for&#x8BED;&#x53E5;(&#x6D41;&#x7A0B;&#x63A7;&#x5236;&#x7AE0;&#x8282;&#x4F1A;&#x8BB2;)&#x3002;select&#x4F1A;&#x4E3A;&#x5176;&#x540E;&#x8DDF;&#x968F;&#x7684;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9879;&#x5206;&#x914D;&#x4E00;&#x4E2A;&#x5E8F;&#x53F7;&#xFF0C;&#x5E76;&#x5728;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#x4E0A;&#x8F93;&#x51FA;&#x5E8F;&#x53F7;&#x548C;&#x5177;&#x4F53;&#x503C;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x5217;&#x8868;&#xFF0C;&#x5E76;&#x7B49;&#x5F85;&#x7528;&#x6237;&#x8F93;&#x5165;&#x9009;&#x62E9;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x9009;&#x62E9;&#x662F;&#x5E8F;&#x53F7;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#xFF0C;&#x5219;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF0C;fname&#x88AB;&#x8BBE;&#x7F6E;&#x7684;&#x662F;&#x7528;&#x6237;&#x9009;&#x62E9;&#x7684;&#x5E8F;&#x53F7;&#x5BF9;&#x5E94;&#x7684;&#x503C;&#xFF0C;&#x800C;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x5E8F;&#x53F7;&#x5219;&#x88AB;&#x5B58;&#x50A8;&#x5728;REPLY&#x53D8;&#x91CF;&#x4E2D;&#x3002;</p>
+<pre><code class="lang-shell"># &#x5217;&#x4E3E;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x4E14;&#x628A;&#x7528;&#x6237;&#x7684;&#x9009;&#x62E9;&#x8F93;&#x51FA;&#x3002;&#x6CE8;&#xFF1A; &#x8FD9;&#x91CC;&#x7684;*&#x4F1A;&#x88AB;shell&#x5F53;&#x505A;&#x901A;&#x914D;&#x7B26;&#xFF0C;&#x88AB;&#x66FF;&#x6362;&#x4E3A;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x6587;&#x4EF6;
+select fname in *;
+do
+    echo you picked $fname \($REPLY\)
+    break;
+done
+</code></pre>
+<p>&#x5F53;&#x7528;&#x6237;&#x8F93;&#x5165;&#x5B8C;&#x540E;&#xFF0C;&#x4F1A;&#x6267;&#x884C;do&#x540E;&#x9762;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x5982;&#x679C;&#x9047;&#x5230;break&#x8BED;&#x53E5;&#xFF0C;&#x5219;select&#x6267;&#x884C;&#x5B8C;&#x6210;&#xFF0C;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x3002;&#x5426;&#x5219;&#x4F1A;&#x518D;&#x6B21;&#x8FDB;&#x5165;select&#x8BED;&#x53E5;&#xFF0C;&#x7B49;&#x5F85;&#x7528;&#x6237;&#x7684;&#x65B0;&#x7684;&#x8F93;&#x5165;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="变量定义和使用.html" class="navigation navigation-prev " aria-label="Previous page: 变量定义和使用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="函数说明.html" class="navigation navigation-next " aria-label="Next page: 函数说明">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"条件分支语句","level":"1.6","depth":1,"next":{"title":"函数说明","level":"1.7","depth":1,"path":"函数说明.md","ref":"函数说明.md","articles":[]},"previous":{"title":"变量定义和使用","level":"1.5","depth":1,"path":"变量定义和使用.md","ref":"变量定义和使用.md","articles":[]},"dir":"ltr"},"config":{"plugins":["disqus","github","-highlight","splitter"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"useIdentifier":false,"shortName":"shell_script_learn"},"github":{"url":"https://github.com/tomatoKiller/shell_script_learning"},"splitter":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":[]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"wurunpeng <wurunpeng@4paradigm.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"shell脚本简介","language":"zh-hans","links":{"gitbook":false,"sharing":{"google":false,"facebook":false,"twitter":false,"all":false}},"gitbook":"*","description":"shell教程"},"file":{"path":"条件分支语句.md","mtime":"2018-09-28T01:41:51.968Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-10-16T13:25:59.199Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
